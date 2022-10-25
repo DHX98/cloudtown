@@ -3,17 +3,16 @@ import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import AppBar from './component/AppBar';
-import ChainOpen from './component/ChainOpen';
 import AnimatedSentence from './component/AnimatedSentence';
 
 // Little helpers ...
 const url = (name: string, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 
 const urls = {
-  yuntangText: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/32.png',
-  xiaoren: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/%E5%B0%8F%E4%BA%BA.png',
+  yuntangText: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/logo_text.png',
+  xiaoren: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/xiaoren.png',
   hezhao: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/1421663742802_.pic_hd.jpg',
-  shanzi: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/%E6%89%87%E5%AD%90.png',
+  shanzi: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/shanzi.png',
 };
 export default function App() {
   const parallax = useRef<IParallax>(null!);
@@ -91,7 +90,7 @@ export default function App() {
             variant="h6"
             sx={{
               paddingLeft: '10%',
-              paddingTop: '15%',
+              paddingTop: '25%',
               paddingRight: '10%',
               textAlign: 'left',
               width: '65vw',
