@@ -135,7 +135,7 @@ export default function App() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            paddingBottom: '20%',
+            paddingBottom: '5%',
           }}
           onClick={() => parallax.current.scrollTo(1)}
         >
