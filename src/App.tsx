@@ -91,7 +91,7 @@ export default function App() {
             variant="h6"
             sx={{
               paddingLeft: '10%',
-              paddingTop: '25%',
+              paddingTop: '15%',
               paddingRight: '10%',
               textAlign: 'left',
               width: '65vw',
