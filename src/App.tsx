@@ -2,8 +2,10 @@ import React, { useRef } from 'react';
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import CardMedia from '@mui/material/CardMedia';
 import AppBar from './component/AppBar';
 import AnimatedSentence from './component/AnimatedSentence';
+import Copyright from './component/Copyright';
 
 // Little helpers ...
 const url = (name: string, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
@@ -18,13 +20,13 @@ export default function App() {
   const parallax = useRef<IParallax>(null!);
   function naviScroll(page:string) {
     if (page === 'About') {
-      parallax.current.scrollTo(0);
-    }
-    if (page === 'Activities') {
       parallax.current.scrollTo(1);
     }
-    if (page === 'Contact') {
+    if (page === 'Activities') {
       parallax.current.scrollTo(2);
+    }
+    if (page === 'Contact') {
+      parallax.current.scrollTo(3);
     }
   }
   return (
@@ -85,23 +87,12 @@ export default function App() {
           <img src={urls.shanzi} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={0.4} style={{ opacity: 0.6 }}>
-          <Typography
-            variant="h6"
-            sx={{
-              paddingLeft: '10%',
-              paddingTop: '25%',
-              paddingRight: '10%',
-              textAlign: 'left',
-              width: '65vw',
-            }}
-          >
-            Cloud Town Dance Club is a Chinese-style and ACG dance club at UBC. We aim to provide a platform for UBC students who are passionate about Neo-Chinese style dances, Japanese Odottemita dances and C-POP dances.
-          </Typography>
+        <ParallaxLayer offset={1} speed={0.4} style={{ opacity: 0.8 }}>
+          <AnimatedSentence />
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={3.3}
+          offset={3.5}
           speed={-0.4}
           style={{
             display: 'flex',
@@ -153,14 +144,22 @@ export default function App() {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'right',
+            height: '100vh',
           }}
         >
 
-          <img
-            src={urls.xiaoren}
-            style={{ width: '40vw', bottom: '0px' }}
+          <CardMedia
+            component="img"
+            image={urls.xiaoren}
+            alt="green iguana"
+            sx={{
+              width: { xs: '70vw', md: '28vw' },
+              height: { xs: '55vh', md: '82vh' },
+              display: { xs: 'flex' },
+              opacity: { xs: 0.2, md: 0.8 },
+              bottom: '0px',
+            }}
           />
-
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -171,13 +170,23 @@ export default function App() {
             alignItems: 'center',
             justifyContent: 'center',
           }}
-          onClick={() => parallax.current.scrollTo(0)}
+          onClick={() => parallax.current.scrollTo(3)}
         >
           <img src={urls.yuntangText} style={{ width: '50%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={3}>
-          <AnimatedSentence />
+        <ParallaxLayer
+          offset={3}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}
+          onClick={() => parallax.current.scrollTo(0)}
+        >
+          <Typography>
+            <Copyright />
+          </Typography>
         </ParallaxLayer>
       </Parallax>
 

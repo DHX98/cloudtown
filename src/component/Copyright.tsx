@@ -13,13 +13,13 @@ function Copyright() {
         px: 2,
         m: 'auto',
         mb: 2,
-        backgroundColor: (theme) => (theme.palette.mode === 'light'
-          ? theme.palette.grey[200]
-          : theme.palette.grey[800]),
+        border: '10px',
+        borderRadius: '16px',
+        backgroundColor: 'grey',
       }}
     >
       <Container maxWidth="sm" sx={{ textAlign: 'center' }}>
-        <Typography variant="body1">
+        <Typography variant="h5">
           Cloudtown 云棠舞社
         </Typography>
         <Typography variant="body2" color="text.secondary">

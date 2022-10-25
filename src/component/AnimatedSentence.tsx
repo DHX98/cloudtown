@@ -3,36 +3,35 @@ import React, {
 } from 'react';
 import { useTransition, animated } from '@react-spring/web';
 
-// @ts-ignore
-import styles from './styles.module.css';
+import Typography from '@mui/material/Typography';
+
+const texts = {
+  t1: 'Vancouver\'s biggest Neo-Chinese style dance club',
+  t2: '-Neo-Chinese dance',
+  t3: '-Japanese Odottemita dance',
+  t4: '-C-POP dance',
+};
 
 export default function AnimatedSentence() {
   const ref = useRef<ReturnType<typeof setTimeout>[]>([]);
   const [items, set] = useState<string[]>([]);
   const transitions = useTransition(items, {
-    from: {
-      opacity: 0,
-      height: 0,
-      innerHeight: 0,
-      transform: 'perspective(600px) rotateX(0deg)',
-      color: '#8fa5b6',
-    },
+    from: { position: 'absolute', opacity: 0 },
     enter: [
-      { opacity: 1, height: 80, innerHeight: 80 },
-      { transform: 'perspective(600px) rotateX(180deg)', color: '#28d79f' },
-      { transform: 'perspective(600px) rotateX(0deg)' },
+      {
+        opacity: 1, height: '20vh', innerHeight: '10vh',
+      },
+      { opacity: 1 },
     ],
-    leave: [{ color: '#c23369' }, { innerHeight: 0 }, { opacity: 0, height: 0 }],
-    update: { color: '#28b4d7' },
+    leave: [{ color: '#000000' }, { innerHeight: 0 }, { opacity: 0, height: 0 }],
+    update: { color: '#000000' },
   });
 
   const reset = useCallback(() => {
     ref.current.forEach(clearTimeout);
     ref.current = [];
     set([]);
-    ref.current.push(setTimeout(() => set(['Apples', 'Oranges', 'Kiwis']), 2000));
-    ref.current.push(setTimeout(() => set(['Apples', 'Kiwis']), 5000));
-    ref.current.push(setTimeout(() => set(['Apples', 'Bananas', 'Kiwis']), 8000));
+    ref.current.push(setTimeout(() => set([texts.t1]), 1500));
   }, []);
 
   useEffect(() => {
@@ -41,14 +40,29 @@ export default function AnimatedSentence() {
   }, []);
 
   return (
-    <div className={styles.container}>
-      <div className={styles.main}>
-        {transitions(({ innerHeight, ...rest }, item) => (
-          <animated.div className={styles.transitionsItem} style={rest} onClick={reset}>
-            <animated.div style={{ overflow: 'hidden', height: innerHeight }}>{item}</animated.div>
-          </animated.div>
-        ))}
-      </div>
-    </div>
+    <Typography
+      variant="h4"
+      sx={{
+        justifyContent: 'center',
+        textAlign: 'left',
+        width: '100vw',
+      }}
+    >
+      {transitions(({ opacity }, item) => (
+        <animated.div
+          style={{
+            justifyContent: 'center',
+            textAlign: 'center',
+          }}
+          onClick={reset}
+        >
+          <animated.div style={{ overflow: 'hidden', paddingTop: '10%', paddingBottom: '3%' }}>{item}</animated.div>
+          <animated.div style={{ overflow: 'hidden' }}>{texts.t2}</animated.div>
+          <animated.div style={{ overflow: 'hidden' }}>{texts.t3}</animated.div>
+          <animated.div style={{ overflow: 'hidden' }}>{texts.t4}</animated.div>
+        </animated.div>
+
+      ))}
+    </Typography>
   );
 }
