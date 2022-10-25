@@ -46,6 +46,8 @@ export default function AnimatedSentence() {
         justifyContent: 'center',
         textAlign: 'left',
         width: '100vw',
+        paddingLeft: '10%',
+        paddingRight: '10%',
       }}
     >
       {transitions(({ opacity }, item) => (
@@ -56,7 +58,7 @@ export default function AnimatedSentence() {
           }}
           onClick={reset}
         >
-          <animated.div style={{ overflow: 'hidden', paddingTop: '10%', paddingBottom: '3%' }}>{item}</animated.div>
+          <animated.div style={{ overflow: 'hidden', paddingTop: '15%', paddingBottom: '5%' }}>{item}</animated.div>
           <animated.div style={{ overflow: 'hidden' }}>{texts.t2}</animated.div>
           <animated.div style={{ overflow: 'hidden' }}>{texts.t3}</animated.div>
           <animated.div style={{ overflow: 'hidden' }}>{texts.t4}</animated.div>

@@ -20,7 +20,7 @@ export default function App() {
   const parallax = useRef<IParallax>(null!);
   function naviScroll(page:string) {
     if (page === 'About') {
-      parallax.current.scrollTo(1);
+      parallax.current.scrollTo(0);
     }
     if (page === 'Activities') {
       parallax.current.scrollTo(2);
@@ -133,6 +133,7 @@ export default function App() {
           <img
             src={urls.yuntangText}
             style={{ width: '80%' }}
+            alt="/"
           />
         </ParallaxLayer>
 
@@ -171,9 +172,7 @@ export default function App() {
             justifyContent: 'center',
           }}
           onClick={() => parallax.current.scrollTo(3)}
-        >
-          <img src={urls.yuntangText} style={{ width: '50%' }} />
-        </ParallaxLayer>
+        />
 
         <ParallaxLayer
           offset={3}
@@ -184,6 +183,7 @@ export default function App() {
           }}
           onClick={() => parallax.current.scrollTo(0)}
         >
+
           <Typography>
             <Copyright />
           </Typography>
