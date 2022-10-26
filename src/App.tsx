@@ -1,26 +1,32 @@
 import React, { useRef } from 'react';
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
-import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
+import Box from '@mui/material/Box';
+import { Grid } from '@mui/material';
 import AppBar from './component/AppBar';
-import AnimatedSentence from './component/AnimatedSentence';
 import Copyright from './component/Copyright';
-
 // Little helpers ...
 const url = (name: string, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
+const texts = {
+  t1: 'Vancouver\'s biggest Neo-Chinese style dance club',
+  t2: 'Neo-Chinese dance',
+  t3: 'Japanese Odottemita dance',
+  t4: 'C-POP dance',
+};
 
 const urls = {
   yuntangText: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/logo_text.png',
   xiaoren: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/xiaoren.png',
   hezhao: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/1421663742802_.pic_hd.jpg',
   shanzi: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/shanzi.png',
+  kongmingdeng: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/kongmingdeng.png',
 };
 export default function App() {
   const parallax = useRef<IParallax>(null!);
   function naviScroll(page:string) {
     if (page === 'About') {
-      parallax.current.scrollTo(0);
+      parallax.current.scrollTo(1);
     }
     if (page === 'Activities') {
       parallax.current.scrollTo(2);
@@ -29,6 +35,9 @@ export default function App() {
       parallax.current.scrollTo(3);
     }
   }
+  // @ts-ignore
+  // @ts-ignore
+  // @ts-ignore
   return (
     <Box
       sx={{
@@ -87,8 +96,21 @@ export default function App() {
           <img src={urls.shanzi} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
-        <ParallaxLayer offset={1} speed={0.4} style={{ opacity: 0.8 }}>
-          <AnimatedSentence />
+        <ParallaxLayer offset={1} speed={0.4} style={{ opacity: 1 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              justifyContent: 'center',
+              textAlign: 'center',
+              width: '100vw',
+              paddingLeft: '10%',
+              paddingRight: '10%',
+              paddingTop: '10vh',
+              color: '#FF7F50',
+            }}
+          >
+            {`${texts.t1} and introductions`}
+          </Typography>
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -116,6 +138,9 @@ export default function App() {
             backgroundSize: '100%',
             backgroundPosition: 'center',
             backgroundImage: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/1421663742802_.pic_hd.jpg',
+            justifyContent: 'center',
+            alignContent: 'center',
+            display: 'flex',
           }}
         />
 
@@ -127,6 +152,7 @@ export default function App() {
             alignItems: 'center',
             justifyContent: 'center',
             paddingBottom: '5%',
+            opacity: 1,
           }}
           onClick={() => parallax.current.scrollTo(1)}
         >
@@ -138,6 +164,50 @@ export default function App() {
         </ParallaxLayer>
 
         <ParallaxLayer
+          offset={0}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '100vh',
+            width: '100vw',
+            opacity: 0.6,
+          }}
+        >
+          {/* <video autoPlay muted loop id="myVideo"> */}
+          {/*  <source */}
+          {/*    src={testVideo} */}
+          {/*    type="video/mp4" */}
+          {/*    style={{ */}
+          {/*      height: '100%', */}
+          {/*      width: '100%', */}
+          {/*    }} */}
+          {/*  /> */}
+          {/* </video> */}
+          {/* <video autoPlay muted loop id="myVideo"> */}
+          {/*  <source */}
+          {/*    src={testVideo} */}
+          {/*    type="video/mp4" */}
+          {/*    style={{ */}
+          {/*      height: '100vh', */}
+          {/*    }} */}
+          {/*  /> */}
+          {/* </video> */}
+          <CardMedia
+            src="https://drive.google.com/uc?export=download&id=1nOWa6I7m5pUdEwbisjkf3XzEZqoYsAdd"
+            component="video"
+            loop
+            autoPlay
+            muted
+            sx={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+
+            }}
+          />
+        </ParallaxLayer>
+        <ParallaxLayer
           offset={1}
           speed={0.1}
           onClick={() => parallax.current.scrollTo(2)}
@@ -148,7 +218,6 @@ export default function App() {
             height: '100vh',
           }}
         >
-
           <CardMedia
             component="img"
             image={urls.xiaoren}
@@ -172,8 +241,74 @@ export default function App() {
             justifyContent: 'center',
           }}
           onClick={() => parallax.current.scrollTo(3)}
-        />
+        >
+          <Grid
+            container
+            sx={{
+              height: '70%',
+              width: '60%',
+            }}
+            spacing={1}
+          >
 
+            {/* <Grid item xs={6}> */}
+            {/*  <iframe */}
+            {/*    src="//player.bilibili.com/player.html?aid=71268432&bvid=BV1AE411o72R&cid=123483843&page=1" */}
+            {/*    scrolling="no" */}
+            {/*    border="0" */}
+            {/*    frameBorder="no" */}
+            {/*    style={{ */}
+            {/*      width: '100%', */}
+            {/*      height: '100%', */}
+            {/*      border: '1px', */}
+            {/*      borderRadius: '16px', */}
+            {/*    }} */}
+            {/*  /> */}
+            {/* </Grid> */}
+            {/* <Grid item xs={6}> */}
+            {/*  <iframe */}
+            {/*    src="//player.bilibili.com/player.html?aid=71268432&bvid=BV1AE411o72R&cid=123483843&page=1" */}
+            {/*    scrolling="no" */}
+            {/*    border="0" */}
+            {/*    frameBorder="no" */}
+            {/*    style={{ */}
+            {/*      width: '100%', */}
+            {/*      height: '100%', */}
+            {/*      border: '1px', */}
+            {/*      borderRadius: '16px', */}
+            {/*    }} */}
+            {/*  /> */}
+            {/* </Grid> */}
+            {/* <Grid item xs={6}> */}
+            {/*  <iframe */}
+            {/*    src="//player.bilibili.com/player.html?aid=71268432&bvid=BV1AE411o72R&cid=123483843&page=1" */}
+            {/*    scrolling="no" */}
+            {/*    border="0" */}
+            {/*    frameBorder="no" */}
+            {/*    style={{ */}
+            {/*      width: '100%', */}
+            {/*      height: '100%', */}
+            {/*      border: '1px', */}
+            {/*      borderRadius: '16px', */}
+            {/*    }} */}
+            {/*  /> */}
+            {/* </Grid> */}
+            {/* <Grid item xs={6}> */}
+            {/*  <iframe */}
+            {/*    src="//player.bilibili.com/player.html?aid=71268432&bvid=BV1AE411o72R&cid=123483843&page=1" */}
+            {/*    scrolling="no" */}
+            {/*    border="0" */}
+            {/*    frameBorder="no" */}
+            {/*    style={{ */}
+            {/*      width: '100%', */}
+            {/*      height: '100%', */}
+            {/*      border: '1px', */}
+            {/*      borderRadius: '16px', */}
+            {/*    }} */}
+            {/*  /> */}
+            {/* </Grid> */}
+          </Grid>
+        </ParallaxLayer>
         <ParallaxLayer
           offset={3}
           style={{
@@ -188,6 +323,7 @@ export default function App() {
             <Copyright />
           </Typography>
         </ParallaxLayer>
+
       </Parallax>
 
     </Box>
