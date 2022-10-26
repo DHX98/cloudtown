@@ -167,8 +167,6 @@ export default function App() {
           offset={0}
           style={{
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
             height: '100vh',
             width: '100vw',
             opacity: 0.6,
@@ -202,9 +200,8 @@ export default function App() {
             playsInline
             sx={{
               width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-
+              height: { xs: '85vh', md: '100%' },
+              objectFit: 'none',
             }}
           />
         </ParallaxLayer>
