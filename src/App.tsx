@@ -199,6 +199,7 @@ export default function App() {
             loop
             autoPlay
             muted
+            playsInline
             sx={{
               width: '100%',
               height: '100%',
