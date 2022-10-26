@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import { Grid } from '@mui/material';
 import AppBar from './component/AppBar';
 import Copyright from './component/Copyright';
-import testVideo from './component/testbg.mp4';
+import testVideo from './component/testbg2.mp4';
 // Little helpers ...
 const url = (name: string, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 const texts = {
