@@ -20,10 +20,10 @@ export default function ChainOpen() {
   const { size, ...rest } = useSpring({
     ref: springApi,
     config: config.stiff,
-    from: { size: '20%', background: 'hotpink' },
+    from: { size: '20%', background: 'E9967A' },
     to: {
-      size: open ? '50%' : '20%',
-      background: open ? 'white' : 'hotpink',
+      size: open ? '95%' : '20%',
+      background: open ? '#E9967A' : '#E9967A',
     },
   });
 
@@ -31,9 +31,9 @@ export default function ChainOpen() {
   const transition = useTransition(open ? data : [], {
     ref: transApi,
     trail: 400 / data.length,
-    from: { opacity: 0, scale: 0 },
-    enter: { opacity: 1, scale: 1 },
-    leave: { opacity: 0, scale: 0 },
+    from: { opacity: 0, scale: 0, width: '10px' },
+    enter: { opacity: 1, scale: 1, width: '20px' },
+    leave: { opacity: 0, scale: 0, width: '10px' },
   });
 
   // This will orchestrate the two animations above, comment the last arg and it creates a sequence
@@ -52,7 +52,9 @@ export default function ChainOpen() {
         {transition((style, item) => (
           <animated.div
             className={styles.item}
-            style={{ ...style, background: item.css }}
+            style={{
+              ...style, background: item.css, width: '100%', display: 'inline',
+            }}
           />
         ))}
       </animated.div>

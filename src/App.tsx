@@ -7,6 +7,7 @@ import { Grid } from '@mui/material';
 import AppBar from './component/AppBar';
 import Copyright from './component/Copyright';
 import testVideo from './component/testbg2.mp4';
+import ChainOpen from './component/ChainOpen';
 // Little helpers ...
 const url = (name: string, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 const texts = {
@@ -27,7 +28,7 @@ export default function App() {
   const parallax = useRef<IParallax>(null!);
   function naviScroll(page:string) {
     if (page === 'About') {
-      parallax.current.scrollTo(1);
+      parallax.current.scrollTo(0);
     }
     if (page === 'Activities') {
       parallax.current.scrollTo(2);
@@ -36,9 +37,7 @@ export default function App() {
       parallax.current.scrollTo(3);
     }
   }
-  // @ts-ignore
-  // @ts-ignore
-  // @ts-ignore
+
   return (
     <Box
       sx={{
@@ -48,7 +47,7 @@ export default function App() {
       {/* eslint-disable-next-line react/jsx-no-bind */}
       <AppBar naviScroll={naviScroll} />
 
-      <Parallax ref={parallax} pages={4} enabled>
+      <Parallax ref={parallax} pages={4} enabled={false}>
 
         <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#faf0e6' }} />
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#faf0e6' }} />
@@ -106,12 +105,29 @@ export default function App() {
               width: '100vw',
               paddingLeft: '10%',
               paddingRight: '10%',
-              paddingTop: '10vh',
-              color: '#FF7F50',
+              color: 'black',
+              paddingTop: '20vh',
+              fontFamily: 'myfont',
             }}
           >
-            {`${texts.t1} and introductions`}
+            {'温哥华最大的中国舞社 '}
           </Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              justifyContent: 'center',
+              textAlign: 'center',
+              width: '100vw',
+              paddingLeft: '10%',
+              paddingRight: '10%',
+              color: 'black',
+              fontFamily: 'myfont',
+
+            }}
+          >
+            {`${texts.t1} `}
+          </Typography>
+
         </ParallaxLayer>
 
         <ParallaxLayer
@@ -138,10 +154,6 @@ export default function App() {
           style={{
             backgroundSize: '100%',
             backgroundPosition: 'center',
-            backgroundImage: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/1421663742802_.pic_hd.jpg',
-            justifyContent: 'center',
-            alignContent: 'center',
-            display: 'flex',
           }}
         />
 
@@ -170,31 +182,13 @@ export default function App() {
             display: 'flex',
             height: '100vh',
             width: '100vw',
-            opacity: 0.6,
+            opacity: 0.4,
           }}
+          onClick={() => parallax.current.scrollTo(1)}
         >
-          {/* <video autoPlay muted loop id="myVideo"> */}
-          {/*  <source */}
-          {/*    src={testVideo} */}
-          {/*    type="video/mp4" */}
-          {/*    style={{ */}
-          {/*      height: '100%', */}
-          {/*      width: '100%', */}
-          {/*    }} */}
-          {/*  /> */}
-          {/* </video> */}
-          {/* <video autoPlay muted loop id="myVideo"> */}
-          {/*  <source */}
-          {/*    src={testVideo} */}
-          {/*    type="video/mp4" */}
-          {/*    style={{ */}
-          {/*      height: '100vh', */}
-          {/*    }} */}
-          {/*  /> */}
-          {/* </video> */}
           <CardMedia
-            src={testVideo}
             component="video"
+            src={testVideo}
             loop
             autoPlay
             muted
@@ -226,6 +220,7 @@ export default function App() {
               height: { xs: '55vh', md: '82vh' },
               display: { xs: 'flex' },
               opacity: { xs: 0.2, md: 0.8 },
+              transform: { xs: 'translate(0px,50px)' },
               bottom: '0px',
             }}
           />
@@ -236,77 +231,11 @@ export default function App() {
           speed={-0}
           style={{
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
           }}
-          onClick={() => parallax.current.scrollTo(3)}
-        >
-          <Grid
-            container
-            sx={{
-              height: '70%',
-              width: '60%',
-            }}
-            spacing={1}
-          >
+          // onClick={() => parallax.current.scrollTo(3)}
 
-            {/* <Grid item xs={6}> */}
-            {/*  <iframe */}
-            {/*    src="//player.bilibili.com/player.html?aid=71268432&bvid=BV1AE411o72R&cid=123483843&page=1" */}
-            {/*    scrolling="no" */}
-            {/*    border="0" */}
-            {/*    frameBorder="no" */}
-            {/*    style={{ */}
-            {/*      width: '100%', */}
-            {/*      height: '100%', */}
-            {/*      border: '1px', */}
-            {/*      borderRadius: '16px', */}
-            {/*    }} */}
-            {/*  /> */}
-            {/* </Grid> */}
-            {/* <Grid item xs={6}> */}
-            {/*  <iframe */}
-            {/*    src="//player.bilibili.com/player.html?aid=71268432&bvid=BV1AE411o72R&cid=123483843&page=1" */}
-            {/*    scrolling="no" */}
-            {/*    border="0" */}
-            {/*    frameBorder="no" */}
-            {/*    style={{ */}
-            {/*      width: '100%', */}
-            {/*      height: '100%', */}
-            {/*      border: '1px', */}
-            {/*      borderRadius: '16px', */}
-            {/*    }} */}
-            {/*  /> */}
-            {/* </Grid> */}
-            {/* <Grid item xs={6}> */}
-            {/*  <iframe */}
-            {/*    src="//player.bilibili.com/player.html?aid=71268432&bvid=BV1AE411o72R&cid=123483843&page=1" */}
-            {/*    scrolling="no" */}
-            {/*    border="0" */}
-            {/*    frameBorder="no" */}
-            {/*    style={{ */}
-            {/*      width: '100%', */}
-            {/*      height: '100%', */}
-            {/*      border: '1px', */}
-            {/*      borderRadius: '16px', */}
-            {/*    }} */}
-            {/*  /> */}
-            {/* </Grid> */}
-            {/* <Grid item xs={6}> */}
-            {/*  <iframe */}
-            {/*    src="//player.bilibili.com/player.html?aid=71268432&bvid=BV1AE411o72R&cid=123483843&page=1" */}
-            {/*    scrolling="no" */}
-            {/*    border="0" */}
-            {/*    frameBorder="no" */}
-            {/*    style={{ */}
-            {/*      width: '100%', */}
-            {/*      height: '100%', */}
-            {/*      border: '1px', */}
-            {/*      borderRadius: '16px', */}
-            {/*    }} */}
-            {/*  /> */}
-            {/* </Grid> */}
-          </Grid>
+        >
+          <ChainOpen />
         </ParallaxLayer>
         <ParallaxLayer
           offset={3}
