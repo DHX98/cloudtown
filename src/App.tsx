@@ -22,6 +22,7 @@ const urls = {
   hezhao: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/1421663742802_.pic_hd.jpg',
   shanzi: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/shanzi.png',
   kongmingdeng: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/kongmingdeng.png',
+  paibian: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/kuang.png',
 };
 export default function App() {
   const parallax = useRef<IParallax>(null!);
@@ -96,8 +97,19 @@ export default function App() {
         </ParallaxLayer>
 
         <ParallaxLayer
-          offset={2.6}
-        />
+          offset={1.2}
+          style={{
+            opacity: 0.9,
+            alignContent: 'center',
+            justifyContent: 'center',
+          }}
+        >
+          <img src={urls.paibian} style={{ display: 'inline', width: '30%' }} />
+          <img src={urls.paibian} style={{ display: 'inline', width: '30%' }} />
+          <img src={urls.paibian} style={{ display: 'inline', width: '30%' }} />
+
+        </ParallaxLayer>
+
         <ParallaxLayer offset={1} speed={0.4} style={{ opacity: 1 }}>
           <Typography
             variant="h4"
