@@ -95,6 +95,9 @@ export default function App() {
           <img src={urls.shanzi} style={{ display: 'block', width: '15%', marginLeft: '75%' }} />
         </ParallaxLayer>
 
+        <ParallaxLayer
+          offset={2.6}
+        />
         <ParallaxLayer offset={1} speed={0.4} style={{ opacity: 1 }}>
           <Typography
             variant="h4"
