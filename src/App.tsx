@@ -3,7 +3,6 @@ import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax';
 import Typography from '@mui/material/Typography';
 import CardMedia from '@mui/material/CardMedia';
 import Box from '@mui/material/Box';
-import { Grid } from '@mui/material';
 import AppBar from './component/AppBar';
 import Copyright from './component/Copyright';
 import testVideo from './component/testbg2.mp4';
