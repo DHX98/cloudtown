@@ -22,7 +22,7 @@ const urls = {
   hezhao: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/1421663742802_.pic_hd.jpg',
   shanzi: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/shanzi.png',
   kongmingdeng: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/kongmingdeng.png',
-  paibian: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/kuang1.png',
+  kuang: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/kuang1.png',
 };
 export default function App() {
   const parallax = useRef<IParallax>(null!);
@@ -47,7 +47,7 @@ export default function App() {
       {/* eslint-disable-next-line react/jsx-no-bind */}
       <AppBar naviScroll={naviScroll} />
 
-      <Parallax ref={parallax} pages={4} enabled={false}>
+      <Parallax ref={parallax} pages={4} enabled>
 
         <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#faf0e6' }} />
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#faf0e6' }} />
@@ -99,14 +99,15 @@ export default function App() {
         <ParallaxLayer
           offset={1.2}
           style={{
-            opacity: 0.9,
+            opacity: 0.8,
             alignContent: 'center',
             justifyContent: 'center',
+            marginLeft: '20%',
           }}
         >
-          <img src={urls.paibian} style={{ display: 'inline', width: '30%' }} />
-          <img src={urls.paibian} style={{ display: 'inline', width: '30%' }} />
-          <img src={urls.paibian} style={{ display: 'inline', width: '30%' }} />
+          <img src={urls.kuang} style={{ display: 'inline', width: '20%' }} />
+          <img src={urls.kuang} style={{ display: 'inline', width: '20%' }} />
+          <img src={urls.kuang} style={{ display: 'inline', width: '20%' }} />
 
         </ParallaxLayer>
 
@@ -120,8 +121,9 @@ export default function App() {
               paddingLeft: '10%',
               paddingRight: '10%',
               color: 'black',
-              paddingTop: '20vh',
+              paddingTop: '5vh',
               fontFamily: 'myfont',
+              opacity: 0.7,
             }}
           >
             {'温哥华最大的中国舞社 '}
@@ -136,6 +138,7 @@ export default function App() {
               paddingRight: '10%',
               color: 'black',
               fontFamily: 'myfont',
+              opacity: 0.7,
 
             }}
           >
@@ -233,7 +236,7 @@ export default function App() {
               width: { xs: '70vw', md: '28vw' },
               height: { xs: '55vh', md: '82vh' },
               display: { xs: 'flex' },
-              opacity: { xs: 0.2, md: 0.8 },
+              opacity: { xs: 0.2, md: 0.9 },
               transform: { xs: 'translate(0px,50px)' },
               bottom: '0px',
             }}
