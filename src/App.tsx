@@ -200,6 +200,7 @@ export default function App() {
             height: '100vh',
             width: '100vw',
             opacity: 0.4,
+            backgroundColor: '#faf0e6',
           }}
           onClick={() => parallax.current.scrollTo(1)}
         >
@@ -214,6 +215,7 @@ export default function App() {
               width: '100%',
               height: { xs: '85vh', md: '100%' },
               objectFit: 'none',
+              backgroundColor: '#faf0e6',
             }}
           />
         </ParallaxLayer>
