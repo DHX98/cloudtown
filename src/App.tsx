@@ -22,7 +22,7 @@ const urls = {
   hezhao: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/1421663742802_.pic_hd.jpg',
   shanzi: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/shanzi.png',
   kongmingdeng: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/kongmingdeng.png',
-  paibian: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/kuang.png',
+  paibian: 'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/kuang1.png',
 };
 export default function App() {
   const parallax = useRef<IParallax>(null!);
