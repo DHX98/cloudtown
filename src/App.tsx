@@ -6,7 +6,7 @@ import Box from '@mui/material/Box';
 import AppBar from './component/AppBar';
 import Copyright from './component/Copyright';
 import testVideo from './component/testbgvideo1.mp4';
-import ChainOpen from './component/ChainOpen';
+import ChainOpen from './component/ImgGallery';
 // Little helpers ...
 const url = (name: string, wrap = false) => `${wrap ? 'url(' : ''}https://awv3node-homepage.surge.sh/build/assets/${name}.svg${wrap ? ')' : ''}`;
 const texts = {
@@ -47,7 +47,7 @@ export default function App() {
       {/* eslint-disable-next-line react/jsx-no-bind */}
       <AppBar naviScroll={naviScroll} />
 
-      <Parallax ref={parallax} pages={4} enabled>
+      <Parallax ref={parallax} pages={4} enabled={false}>
 
         <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#faf0e6' }} />
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#faf0e6' }} />
