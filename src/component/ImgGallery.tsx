@@ -11,6 +11,17 @@ import './styles.css';
 // import required modules
 import { Navigation } from 'swiper';
 
+const galleryImgUrls = [
+  'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/gallery/caiwei.jpg',
+  'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/gallery/chunwan.jpg',
+  'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/gallery/coincidance.jpg',
+  'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/gallery/dwkm.jpg',
+  'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/gallery/jiemeng.png',
+  'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/gallery/lsb.jpg',
+  'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/gallery/manzhan.jpg',
+  'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/gallery/pailian.JPG',
+  'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/gallery/sfks.jpg',
+];
 export default function ImgGallery() {
   return (
     <Swiper
@@ -21,15 +32,18 @@ export default function ImgGallery() {
       cssMode
       pagination
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 5</SwiperSlide>
-      <SwiperSlide>Slide 6</SwiperSlide>
-      <SwiperSlide>Slide 7</SwiperSlide>
-      <SwiperSlide>Slide 8</SwiperSlide>
-      <SwiperSlide>Slide 9</SwiperSlide>
+      {
+        galleryImgUrls.map((url) => (
+          <SwiperSlide
+            style={{
+              backgroundImage: `url(${url})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+        ))
+      }
     </Swiper>
   );
 }

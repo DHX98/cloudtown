@@ -41,14 +41,23 @@ export default function App() {
   return (
     <Box
       sx={{
-        width: '100vw', height: '100vh', background: '#faf0e6',
+        width: '100vw',
+        height: '100vh',
+        background: '#faf0e6',
       }}
     >
-      {/* eslint-disable-next-line react/jsx-no-bind */}
       <AppBar naviScroll={naviScroll} />
 
-      <Parallax ref={parallax} pages={4} enabled={false}>
-
+      <Parallax
+        ref={parallax}
+        pages={4}
+        enabled={false}
+        style={{
+          top: '9vh',
+          background: '#faf0e6',
+        }}
+      >
+        {/* eslint-disable-next-line react/jsx-no-bind */}
         <ParallaxLayer offset={1} speed={1} style={{ backgroundColor: '#faf0e6' }} />
         <ParallaxLayer offset={2} speed={1} style={{ backgroundColor: '#faf0e6' }} />
         <ParallaxLayer offset={3} speed={1} style={{ backgroundColor: '#faf0e6' }} />
@@ -121,9 +130,9 @@ export default function App() {
               paddingLeft: '10%',
               paddingRight: '10%',
               color: 'black',
-              paddingTop: '5vh',
+              paddingTop: '25vh',
               fontFamily: 'myfont',
-              opacity: 0.7,
+              opacity: 0.8,
             }}
           >
             {'温哥华最大的中国舞社 '}
@@ -138,8 +147,7 @@ export default function App() {
               paddingRight: '10%',
               color: 'black',
               fontFamily: 'myfont',
-              opacity: 0.7,
-
+              opacity: 0.8,
             }}
           >
             {`${texts.t1} `}
@@ -213,7 +221,7 @@ export default function App() {
             playsInline
             sx={{
               width: '100%',
-              height: { xs: '85vh', md: '100%' },
+              height: { xs: '90vh', md: '100%' },
               objectFit: 'none',
               backgroundColor: '#faf0e6',
             }}

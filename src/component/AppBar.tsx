@@ -29,9 +29,13 @@ function ResponsiveAppBar(props:any) {
   return (
     <AppBar
       position="static"
-      color="transparent"
       sx={{
         boxShadow: 0,
+        position: 'fixed',
+        top: 0,
+        zIndex: 5,
+        bgcolor: '#faf0e6',
+        height: '9vh',
       }}
     >
       <Container maxWidth="xl">
