@@ -44,7 +44,7 @@ body {
     background-repeat: no-repeat;
     transform: scaleX(1);    height: 25vh;
     width: 25vw;
-    top: 70%;
+    top: 50%;
 }
 
 .swiper-button-next {
@@ -55,5 +55,5 @@ body {
     transform: scaleX(-1);
     height: 25vh;
     width: 25vw;
-    top: 70%;
+    top: 50%;
 }

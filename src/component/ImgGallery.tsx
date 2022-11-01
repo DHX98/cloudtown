@@ -23,6 +23,7 @@ const galleryImgUrls = [
   'https://raw.githubusercontent.com/DHX98/cloudtown/main/pics/gallery/sfks.jpg',
 ];
 export default function ImgGallery() {
+  const [displayVideo, setDisplayVideo] = React.useState(false);
   return (
     <Swiper
       rewind
@@ -41,7 +42,22 @@ export default function ImgGallery() {
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
             }}
-          />
+            onClick={async () => {
+              setDisplayVideo(!displayVideo);
+            }}
+          >
+            <iframe
+              src="https://drive.google.com/file/d/1zoYJIf8_o-cRm-1gDvdGA5A0WmcJawk1/preview"
+              width="80%"
+              height="80%"
+              allowFullScreen
+              style={{
+                display: displayVideo ? 'block' : 'none',
+                border: '1px',
+                borderRadius: '32px',
+              }}
+            />
+          </SwiperSlide>
         ))
       }
     </Swiper>
